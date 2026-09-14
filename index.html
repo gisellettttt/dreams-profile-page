@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreams Profile</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DynaPuff:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <body>
+        <!-- Day Main Page -->
+        <div class="main">
+            <div class="header-container">
+                <h1 class="header" id="greeting">Good <br> Morning...</h1>
+                <br>
+                <p>hello</p>
+            </div>
+            <p class="menu-label">click something to find out i guess...</p>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <button class="menu-btn" aria-expanded="false" aria-controls="panel1">Degree</button>
+                    <div class="menu-panel" id="panel1">computer science.......</div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-btn" aria-expanded="false" aria-controls="panel2">Hobbies</button>
+                    <div class="menu-panel" id="panel2">
+                        <ul>i do art sometimes</ul>
+                        <ul>i like to drink</ul>
+                        <ul>yums</ul>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-btn" aria-expanded="false" aria-controls="panel3">funfact</button>
+                    <div class="menu-panel" id="panel3">i have a dog :] <br> her name is Miki <3
+                        <img src="./images/477e1fe3-2221-4508-b315-dd1e1bbdb4ba.jpg" alt="dog-img">
+                    </div>
+                    
+                </div>
+            </div>
 
+        <button type="button" class="floating-sun-btn" id="dayNightToggle" aria-pressed="false" aria-label="Toggle day and night">
+            <img src="./images/ekjgbtvs.png" alt="" class="floating-sun-img" id="toggleIcon" />
+        </button>        
+    </div>
+    <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,210 @@
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;    
+    font-size: 100px;
+    -webkit-text-stroke: 0.5px black;
+}
+
+p {
+    font-family: "Archivo Black", sans-serif;
+    color: aliceblue;
+    -webkit-text-stroke: 0.5px black;
+
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+/* ===================
+   Main Section
+=================== */
+.main {
+    background: url("images/old\ ass\ windows\ wallpaper\ copy.jpg") center center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.main.night {
+    background: url("images/old\ ass\ windows\ night\ wallpaper.jpg") center center/cover no-repeat;
+}
+
+.floating-sun-btn {
+    position: fixed;
+    top: 40px;            
+    right: 40px; 
+    width: 80px;
+    height: 80px;
+    overflow: hidden; 
+    z-index: 9999;
+    animation: breathing 5s ease-out infinite;
+}
+
+/* Custom Image Constraints */
+.floating-sun-img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes breathing {
+  0% { transform: scale(0.8); }
+
+  25% { transform: scale(2); }
+
+  60% { transform: scale(0.8); }
+
+  100% { transform: scale(0.8); }
+}
+
+/* ===================
+   Header Section
+=================== */
+.header-container {
+    position: fixed;
+    top: 12vh;
+    left: 30px;
+    z-index: 5;
+    max-width: 60vw;
+}
+
+.header {
+    color: aliceblue;
+    text-decoration: 50px solid;
+}
+
+.day-header {
+    color: aliceblue;
+}
+
+/* ===================
+   Menu Section
+=================== */
+.menu-container {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+    z-index: 20;
+}
+ 
+.menu-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.menu-btn {
+    position: relative;
+    z-index: 2;
+    border: 2px solid aliceblue;
+    border-radius: 40%;
+    height: 56px;
+    width: 100px;
+    padding: 0;
+    background: rgba(20, 10, 40, 0.35);
+    color: aliceblue;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+
+    overflow: hidden;
+}
+ 
+.menu-btn:hover {
+    transform: translateY(-3px);
+}
+ 
+.menu-btn[aria-expanded="true"] {
+    background: #ffcc66;
+    color: #2b1b44;
+}
+ 
+/* the "bubble" that grows out of the button */
+.menu-panel {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: 50%;
+    width: 250px;
+    max-width: 80vw;
+    background: aliceblue;
+    color: #2b1b44;
+    font-family: "Roboto", sans-serif;
+    border-radius: 18px;
+    padding: 16px 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-y: auto;
+ 
+    /* closed state */
+    transform: translate(-50%, 8px) scale(0.85);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+}
+ 
+.menu-panel::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: aliceblue;
+}
+ 
+.menu-item.open .menu-panel {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.menu-panel img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.menu-label {
+    position: fixed;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
